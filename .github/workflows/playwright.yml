@@ -20,6 +20,8 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - name: Install dependencies
         run: npm ci
+      - name: Install missing package
+        run: npm install this-package-does-not-exist-cfa
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
